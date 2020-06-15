@@ -44,7 +44,7 @@ class App extends React.Component {
             humidity: res.data.current.humidity,
             img: res.data.current.weather_icons
           }
-
+          console.log(userWeather);
           this.setState({ weather: userWeather });
         })
       })
@@ -75,7 +75,7 @@ class App extends React.Component {
         humidity: res.data.current.humidity,
         img: res.data.current.weather_icons
       }
-
+      console.log(userWeather);
       this.setState({ weather: userWeather });
 
     })
