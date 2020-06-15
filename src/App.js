@@ -9,8 +9,8 @@ class App extends React.Component {
   //state
   state = {
     userPosition: {
-      latitude: 35,
-      longitude: 139
+      latitude: 45,
+      longitude: 45
     },
     weather: {},
     regionInput: ""
