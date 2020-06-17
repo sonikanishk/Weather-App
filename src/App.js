@@ -6,7 +6,7 @@ import Axios from 'axios';
 
 class App extends React.Component {
 
-  //state
+  
   state = {
     userPosition: {
       latitude: 45,
@@ -17,11 +17,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    //check whether geolocation is supported
+    
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
 
-        //get the lat and long of your device
+        
         let pos = {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude
@@ -29,7 +29,7 @@ class App extends React.Component {
 
         this.setState({ userPosition: pos });
 
-        //Weather Api call
+        
         Axios.get(`http://api.weatherstack.com/current?access_key=ee2c00a09ba65e4467143d28625d3fa2&query=${this.state.userPosition.latitude},${this.state.userPosition.longitude}`).then(res => {
 
           let userWeather = {
@@ -51,12 +51,12 @@ class App extends React.Component {
     }
   }
 
-  //update the value of the the input field with state
+  
   changeRegion = (value) => {
     this.setState({ regionInput: value })
   }
 
-  //update the weather depending upon the value user entered
+  
   changeLocation = (e) => {
 
     e.preventDefault()
